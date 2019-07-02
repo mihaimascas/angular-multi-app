@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TestService} from '../test.service';
 
 @Component({
   selector: 'app-view-b',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewBComponent implements OnInit {
 
-  constructor() { }
+  public label: string;
+
+  constructor(
+    private testService: TestService
+  ) { }
 
   ngOnInit() {
+    this.label = this.testService.getLabel();
   }
-
 }

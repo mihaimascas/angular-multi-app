@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "af-lib": [
+        "dist/af-lib"
+      ],
+      "af-lib/*": [
+        "dist/af-lib/*"
+      ]
+    }
   }
 }

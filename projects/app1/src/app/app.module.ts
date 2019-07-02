@@ -7,6 +7,11 @@ import { ViewAComponent } from './view-a/view-a.component';
 import { ViewBComponent } from './view-b/view-b.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { MainComponent } from './layout/main/main.component';
+import { TestService } from './test.service';
+
+const providers = [
+  TestService
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +28,7 @@ import { MainComponent } from './layout/main/main.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [...providers],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -33,7 +38,8 @@ export class App1SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppModule,
-      providers: []
+      providers: [...providers]
     };
   }
 }
+
